@@ -1,0 +1,295 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    title: 'RAK ICC Foundations',
+    description: 'The ultimate vehicle for asset protection and succession planning. A distinct legal entity with no shareholders, functioning in perpetuity as an orphan structure.',
+    href: '/services/rak-foundations',
+    icon: 'shield',
+    featured: true,
+  },
+  {
+    title: 'Company Formation',
+    description: 'RAKICC companies, RAKEZ visa-eligible entities, Dubai Mainland LLCs, and structures across DIFC, ADGM, and international jurisdictions.',
+    href: '/services',
+    icon: 'building',
+  },
+  {
+    title: 'Bank Account Setup',
+    description: 'Dedicated banking partnerships across the GCC, Jersey, and beyond. Including crypto-friendly solutions for diverse risk profiles.',
+    href: '/services',
+    icon: 'bank',
+  },
+  {
+    title: 'Golden Visa Support',
+    description: 'End-to-end support for the 10-year UAE Golden Visa. Eligibility assessment, file preparation, and family sponsorship guidance.',
+    href: '/services',
+    icon: 'passport',
+  },
+  {
+    title: 'PRO Services',
+    description: 'Licence applications, regulatory filings, visa processing, and government liaison. We handle the complexity so you do not have to.',
+    href: '/services',
+    icon: 'document',
+  },
+  {
+    title: 'Tax & VAT',
+    description: 'Corporate tax residency planning, VAT registration, and ongoing compliance. Leveraging deep knowledge of UAE tax structuring.',
+    href: '/services',
+    icon: 'calculator',
+  },
+];
+
+const stats = [
+  { value: '30+', label: 'Years of Experience' },
+  { value: '7', label: 'Jurisdictions Covered' },
+  { value: '100%', label: 'Foreign Ownership' },
+  { value: '3 Days', label: 'Foundation Setup' },
+];
+
+const differentiators = [
+  {
+    title: 'Institutional Expertise',
+    description: 'Our team brings decades of experience from Coutts, BNP Paribas, and Barclays, advising HNWIs on complex corporate structures.',
+  },
+  {
+    title: 'Digital-First Approach',
+    description: 'Automation-driven efficiency with a secure data warehouse. Frictionless onboarding without compromising confidentiality.',
+  },
+  {
+    title: 'Single Point of Contact',
+    description: 'One dedicated relationship manager across all services. No handoffs, no delays, no lost context.',
+  },
+  {
+    title: 'Lifetime Partnerships',
+    description: 'We are not a transactional service. We build long-term relationships, managing your structures year after year.',
+  },
+];
+---
+
+<Layout title="Corporate Services & RAK ICC Foundations" description="Jersey Trust is a UAE-based Corporate Services Provider specialising in RAK ICC Foundations, company formation, and corporate structuring for HNWIs, entrepreneurs, and family offices worldwide.">
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="relative min-h-[90vh] flex items-center bg-jt-navy overflow-hidden pt-20">
+    <!-- Subtle gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-br from-jt-navy via-jt-charcoal to-jt-navy"></div>
+    <!-- Gold accent line -->
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+      <div class="max-w-3xl">
+        <p class="text-jt-gold-light text-sm font-semibold tracking-[0.2em] uppercase mb-6">
+          Licensed Corporate Services Provider & RAK ICC Registered Agent
+        </p>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-8">
+          Structures Built to
+          <span class="text-jt-gold-light">Protect</span> and
+          <span class="text-jt-gold-light">Endure</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-10 max-w-2xl">
+          We specialise in RAK ICC Foundations, corporate structuring, and banking solutions for high-net-worth individuals, family offices, and entrepreneurs worldwide.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/services/rak-foundations" class="px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-colors text-center">
+            Explore RAK Foundations
+          </a>
+          <a href="/contact" class="px-8 py-4 border border-jt-gold-light text-jt-gold-light font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-gold-light hover:text-jt-navy transition-colors text-center">
+            Book a Consultation
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="bg-jt-cream border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        {stats.map((stat) => (
+          <div class="text-center">
+            <p class="text-3xl md:text-4xl font-display font-bold text-jt-red">{stat.value}</p>
+            <p class="text-sm text-jt-slate mt-1 tracking-wide">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- RAK Foundations Feature (Hero Service) -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-jt-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">Our Signature Service</p>
+          <h2 class="text-3xl md:text-4xl font-display font-bold text-jt-navy mb-6">
+            RAK ICC Foundations
+          </h2>
+          <p class="text-jt-slate leading-relaxed mb-6">
+            RAK ICC Foundations are among the most secure, versatile, and cost-effective structures available globally for individuals and corporates seeking sophisticated asset protection, wealth management, and succession planning.
+          </p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-jt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-jt-slate"><strong class="text-jt-navy">Asset Protection</strong> with legal firewall provisions shielding against foreign judgements</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-jt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-jt-slate"><strong class="text-jt-navy">Complete Confidentiality</strong> with no public registry of founders or beneficiaries</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-jt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-jt-slate"><strong class="text-jt-navy">Perpetuity</strong>, designed to function indefinitely for multi-generational wealth transfer</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-jt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-jt-slate"><strong class="text-jt-navy">3-Year Statute of Limitations</strong> providing legal certainty against claims</span>
+            </li>
+          </ul>
+          <a href="/services/rak-foundations" class="inline-flex items-center gap-2 text-jt-red font-semibold text-sm tracking-wide uppercase hover:text-jt-red-dark transition-colors">
+            Learn More About RAK Foundations
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+        <div class="bg-jt-cream rounded-lg p-10 lg:p-12">
+          <h3 class="font-display text-xl font-semibold text-jt-navy mb-6">How It Works</h3>
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-jt-red text-white flex items-center justify-center text-sm font-bold shrink-0">1</div>
+              <div>
+                <p class="font-semibold text-jt-navy">Consultation</p>
+                <p class="text-sm text-jt-slate mt-1">We assess your objectives and recommend the optimal structure.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-jt-red text-white flex items-center justify-center text-sm font-bold shrink-0">2</div>
+              <div>
+                <p class="font-semibold text-jt-navy">Documentation</p>
+                <p class="text-sm text-jt-slate mt-1">We draft the Charter and By-Laws, tailored to your specific requirements.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-jt-red text-white flex items-center justify-center text-sm font-bold shrink-0">3</div>
+              <div>
+                <p class="font-semibold text-jt-navy">Establishment</p>
+                <p class="text-sm text-jt-slate mt-1">Your foundation is registered, typically within 3 business days. No UAE presence required.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-full bg-jt-red text-white flex items-center justify-center text-sm font-bold shrink-0">4</div>
+              <div>
+                <p class="font-semibold text-jt-navy">Ongoing Management</p>
+                <p class="text-sm text-jt-slate mt-1">As your Registered Agent, we handle annual compliance and governance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Services Grid -->
+  <section class="py-24 bg-jt-warm-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-jt-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">What We Do</p>
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-jt-navy">
+          Comprehensive Corporate Services
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service) => (
+          <a
+            href={service.href}
+            class:list={[
+              'group block p-8 rounded-lg transition-all duration-300 hover:shadow-lg',
+              service.featured ? 'bg-jt-navy text-white ring-2 ring-jt-gold' : 'bg-white hover:bg-white',
+            ]}
+          >
+            <h3 class:list={[
+              'font-display text-xl font-semibold mb-3',
+              service.featured ? 'text-jt-gold-light' : 'text-jt-navy group-hover:text-jt-red',
+            ]}>
+              {service.title}
+            </h3>
+            <p class:list={[
+              'text-sm leading-relaxed mb-4',
+              service.featured ? 'text-gray-300' : 'text-jt-slate',
+            ]}>
+              {service.description}
+            </p>
+            <span class:list={[
+              'inline-flex items-center gap-1 text-sm font-semibold tracking-wide uppercase transition-colors',
+              service.featured ? 'text-jt-gold-light' : 'text-jt-red group-hover:text-jt-red-dark',
+            ]}>
+              Learn More
+              <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Jersey Trust -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-jt-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">Why Jersey Trust</p>
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-jt-navy">
+          What Sets Us Apart
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-10">
+        {differentiators.map((item) => (
+          <div class="flex items-start gap-5">
+            <div class="w-1 h-full bg-gradient-to-b from-jt-red to-jt-gold rounded-full shrink-0"></div>
+            <div>
+              <h3 class="font-display text-lg font-semibold text-jt-navy mb-2">{item.title}</h3>
+              <p class="text-jt-slate text-sm leading-relaxed">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-jt-navy relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-jt-navy via-jt-charcoal to-jt-navy"></div>
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent"></div>
+    <div class="relative max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+        Ready to Structure Your Future?
+      </h2>
+      <p class="text-gray-300 text-lg leading-relaxed mb-10">
+        Whether you are exploring RAK ICC Foundations, setting up a UAE company, or seeking banking solutions, our team is ready to help.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-colors">
+          Book a Consultation
+        </a>
+        <a href="https://wa.me/971585035674" target="_blank" rel="noopener" class="px-8 py-4 border border-jt-gold-light text-jt-gold-light font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-gold-light hover:text-jt-navy transition-colors">
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

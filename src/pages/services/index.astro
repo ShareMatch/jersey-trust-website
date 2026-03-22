@@ -1,0 +1,129 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const services = [
+  {
+    title: 'RAK ICC Foundations',
+    description: 'The ultimate vehicle for succession planning and asset protection. A Foundation is an "Orphan Structure" with a distinct legal personality, separate from its Founder. Offers the flexibility of a trust with the legal certainty of a corporate entity.',
+    features: ['Asset Protection & Firewall Provisions', 'Complete Confidentiality', 'Perpetuity & Succession Planning', '3-Year Statute of Limitations', 'Tax Efficiency'],
+    href: '/services/rak-foundations',
+    featured: true,
+  },
+  {
+    title: 'RAKICC Limited Companies (SPV / IBC)',
+    description: 'Flexible corporate vehicles for international business and holding structures. Ideal for passive holding, joint ventures, or owning UAE real estate.',
+    features: ['Real Estate Holding', 'International Trade & Invoicing', 'Investment Holding', 'No UAE Presence Required'],
+  },
+  {
+    title: 'RAKEZ Visa Eligible Companies',
+    description: 'Cost-effective operational entities with UAE residency eligibility. Conduct business within the UAE Free Zone, hire employees, and obtain residency visas.',
+    features: ['100% Foreign Ownership', 'Workspace Included', 'Access to UAE Double Tax Treaties', 'Visa Eligibility'],
+  },
+  {
+    title: 'Dubai Mainland LLC',
+    description: 'The gold standard for trading directly within Dubai and the wider UAE. Access the local market, bid on government tenders, and meet substance requirements.',
+    features: ['Mainland Market Access', '100% Foreign Ownership', 'Government Tender Eligibility', 'Top-Tier Banking Access'],
+  },
+  {
+    title: 'Golden Visa Support',
+    description: 'End-to-end support for the 10-year UAE Golden Visa. Available to investors, entrepreneurs, and exceptional talents.',
+    features: ['Eligibility Assessment', 'File Preparation & Liaison', 'VIP Medical & Emirates ID', 'Family Sponsorship Guidance'],
+  },
+  {
+    title: 'Additional Corporate Services',
+    description: 'A full suite of services to keep your entity compliant and fully operational, including PRO services, tax & VAT registration, bank account setup, and ongoing compliance management.',
+    features: ['PRO Services & Government Liaison', 'Tax & VAT Registration', 'Bank Account Setup', 'Licence Applications & Filings'],
+  },
+];
+---
+
+<Layout title="Services" description="Jersey Trust provides comprehensive corporate services including RAK ICC Foundations, company formation, banking, Golden Visa support, and more.">
+  <Header slot="header" />
+
+  <section class="pt-32 pb-24 bg-jt-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl mb-16">
+        <p class="text-jt-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">Our Services</p>
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-jt-navy mb-6">
+          Comprehensive Corporate Structuring
+        </h1>
+        <p class="text-jt-slate text-lg leading-relaxed">
+          We are destination-agnostic and aim to provide structures suited to your specific needs. From RAK ICC Foundations to Dubai Mainland companies, we cover the full spectrum.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="space-y-12">
+        {services.map((service) => (
+          <div class:list={[
+            'rounded-lg p-8 lg:p-10',
+            service.featured ? 'bg-jt-navy text-white ring-2 ring-jt-gold' : 'bg-jt-cream',
+          ]}>
+            <div class="grid lg:grid-cols-3 gap-8">
+              <div class="lg:col-span-2">
+                <h2 class:list={[
+                  'text-2xl font-display font-bold mb-4',
+                  service.featured ? 'text-jt-gold-light' : 'text-jt-navy',
+                ]}>
+                  {service.title}
+                </h2>
+                <p class:list={[
+                  'leading-relaxed mb-6',
+                  service.featured ? 'text-gray-300' : 'text-jt-slate',
+                ]}>
+                  {service.description}
+                </p>
+                {service.href && (
+                  <a
+                    href={service.href}
+                    class:list={[
+                      'inline-flex items-center gap-2 text-sm font-semibold tracking-wide uppercase transition-colors',
+                      service.featured ? 'text-jt-gold-light hover:text-white' : 'text-jt-red hover:text-jt-red-dark',
+                    ]}
+                  >
+                    Learn More
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                )}
+              </div>
+              <div>
+                <h3 class:list={[
+                  'text-sm font-semibold tracking-wide uppercase mb-4',
+                  service.featured ? 'text-gray-400' : 'text-jt-slate',
+                ]}>
+                  Key Features
+                </h3>
+                <ul class="space-y-2">
+                  {service.features.map((feature) => (
+                    <li class="flex items-center gap-2">
+                      <svg class:list={['w-4 h-4 shrink-0', service.featured ? 'text-jt-gold-light' : 'text-jt-red']} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span class:list={['text-sm', service.featured ? 'text-gray-300' : 'text-jt-slate']}>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 text-center">
+        <p class="text-jt-slate mb-4">We also offer structures in DIFC, ADGM, DMCC, UAQ, Jersey, Guernsey, and BVI.</p>
+        <a href="/contact" class="inline-block px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-colors">
+          Discuss Your Requirements
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

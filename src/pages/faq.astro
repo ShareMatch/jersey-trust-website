@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const faqs = [
+  {
+    category: 'RAK ICC Foundations',
+    questions: [
+      { q: 'What is a RAK ICC Foundation?', a: 'A RAK ICC Foundation is a distinct legal entity with no shareholders and no directors, established by a Founder. It functions as an "Orphan Structure" designed to exist in perpetuity, offering world-class asset protection, confidentiality, and succession planning.' },
+      { q: 'What assets can a Foundation hold?', a: 'Foundations can hold any asset, including real property, shares in companies, bonds, personal chattels, and investment portfolios.' },
+      { q: 'How does the legal firewall work?', a: 'The 2025 amendments to RAKICC Foundation Regulations introduced Firewall provisions that shield Foundations from foreign judgements conflicting with RAKICC regulations, plus a 3-year statute of limitations on claims.' },
+      { q: 'How long does it take to set up?', a: 'Once documents are submitted, your Foundation can be established in as few as 3 business days. Faster turnaround is available. UAE presence is not required.' },
+      { q: 'Can I redomicile an existing structure?', a: 'Yes. Foundations from other jurisdictions can typically be redomiciled to RAKICC. Existing RAKICC Companies can also be converted to Foundations.' },
+    ],
+  },
+  {
+    category: 'Company Formation',
+    questions: [
+      { q: 'What types of companies can you set up?', a: 'We form RAKICC limited companies (SPV/IBC), RAKEZ visa-eligible companies, Dubai Mainland LLCs, and entities in DIFC, ADGM, DMCC, UAQ, Jersey, Guernsey, and BVI.' },
+      { q: 'Do I need to be in the UAE?', a: 'For RAKICC Foundations and companies, UAE presence is not required. For visa-eligible companies and Golden Visas, you will need to be in the UAE for certain processing steps.' },
+      { q: 'Can I have 100% foreign ownership?', a: 'Yes. All free zone entities and most mainland commercial and professional activities now allow 100% foreign ownership.' },
+    ],
+  },
+  {
+    category: 'Banking & Visas',
+    questions: [
+      { q: 'Can you help with bank account opening?', a: 'Yes. We have dedicated banking partnerships across the GCC, Jersey, and other regions, including crypto-friendly solutions for diverse risk profiles.' },
+      { q: 'What is the Golden Visa?', a: 'The UAE Golden Visa is a 10-year residency visa for investors, entrepreneurs, and exceptional talents. It allows you to stay outside the UAE for more than 6 months without invalidation, and you can sponsor family members.' },
+    ],
+  },
+  {
+    category: 'Working With Us',
+    questions: [
+      { q: 'What are your fees?', a: 'Fees vary by structure and service. Contact us for a personalised quotation based on your specific requirements. All fees quoted are exclusive of VAT, and government fees are subject to change.' },
+      { q: 'What ongoing support do you provide?', a: 'As your Registered Agent, we handle annual renewals, compliance with regulations, governance maintenance, and can assist with any amendments to your structures.' },
+    ],
+  },
+];
+---
+
+<Layout title="FAQ" description="Frequently asked questions about RAK ICC Foundations, UAE company formation, banking, and corporate services.">
+  <Header slot="header" />
+
+  <section class="pt-32 pb-24 bg-jt-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-jt-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">FAQ</p>
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-jt-navy mb-6">
+          Frequently Asked Questions
+        </h1>
+        <p class="text-jt-slate text-lg leading-relaxed">
+          Answers to common questions about our services, structures, and processes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      {faqs.map((section) => (
+        <div class="mb-16 last:mb-0">
+          <h2 class="text-2xl font-display font-bold text-jt-navy mb-8">{section.category}</h2>
+          <div class="space-y-6">
+            {section.questions.map((faq) => (
+              <details class="group border-b border-gray-200 pb-6">
+                <summary class="flex justify-between items-center cursor-pointer list-none">
+                  <h3 class="font-semibold text-jt-navy pr-4">{faq.q}</h3>
+                  <svg class="w-5 h-5 text-jt-slate shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p class="text-jt-slate text-sm leading-relaxed mt-4">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <div class="bg-jt-cream rounded-lg p-8 text-center mt-16">
+        <h3 class="font-display text-xl font-semibold text-jt-navy mb-3">Still Have Questions?</h3>
+        <p class="text-jt-slate text-sm mb-6">Our team is happy to discuss your specific requirements in confidence.</p>
+        <a href="/contact" class="inline-block px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-colors">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

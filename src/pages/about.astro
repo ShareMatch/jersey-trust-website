@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="About Us" description="Jersey Trust combines 30+ years of institutional expertise with a digital-first approach to corporate services in the UAE.">
+  <Header slot="header" />
+
+  <section class="pt-32 pb-24 bg-jt-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl mb-16">
+        <p class="text-jt-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">About Us</p>
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-jt-navy mb-6">
+          30+ Years of Institutional Expertise
+        </h1>
+        <p class="text-jt-slate text-lg leading-relaxed">
+          Jersey Trust is a fully licensed Corporate Services Provider and RAK ICC Registered Agent, combining global expertise with local insight. We specialise in UAE structures while maintaining an international outlook across multiple jurisdictions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <div>
+          <h2 class="text-3xl font-display font-bold text-jt-navy mb-6">What We Do</h2>
+          <div class="space-y-4 text-jt-slate leading-relaxed">
+            <p>We assist clients in navigating the complexities of setting up and operating corporate structures. From RAK ICC Foundations for multi-generational wealth protection, to operational companies with visa eligibility, to banking solutions across multiple jurisdictions.</p>
+            <p>Our team has deep expertise across corporate services, private banking, family offices, trust services, accounting, and tax. We have held senior roles at institutions including Coutts, BNP Paribas, and Barclays Bank.</p>
+            <p>Our digital-first approach ensures a frictionless experience while prioritising client confidentiality and data security. A dedicated single point of contact and integrated services free up your valuable time.</p>
+          </div>
+        </div>
+        <div>
+          <h2 class="text-3xl font-display font-bold text-jt-navy mb-6">How We Help</h2>
+          <ul class="space-y-6">
+            <li class="flex items-start gap-4">
+              <div class="w-1 bg-jt-red rounded-full shrink-0 self-stretch"></div>
+              <div>
+                <h3 class="font-semibold text-jt-navy mb-1">Confidentiality & Asset Protection</h3>
+                <p class="text-sm text-jt-slate">Structures that protect ownership identity and ringfence specific assets for legal protection.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-1 bg-jt-red rounded-full shrink-0 self-stretch"></div>
+              <div>
+                <h3 class="font-semibold text-jt-navy mb-1">International Banking & KYC</h3>
+                <p class="text-sm text-jt-slate">Trusted banking partnerships to help you get and stay banked internationally.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-1 bg-jt-red rounded-full shrink-0 self-stretch"></div>
+              <div>
+                <h3 class="font-semibold text-jt-navy mb-1">Tax Planning</h3>
+                <p class="text-sm text-jt-slate">Comprehensive solutions for corporate tax residency leveraging deep structuring knowledge.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <div class="w-1 bg-jt-red rounded-full shrink-0 self-stretch"></div>
+              <div>
+                <h3 class="font-semibold text-jt-navy mb-1">Succession Planning</h3>
+                <p class="text-sm text-jt-slate">Structures that facilitate smooth and efficient transfer of assets across generations.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-jt-navy">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-display font-bold text-white mb-6">Work With Us</h2>
+      <p class="text-gray-300 text-lg leading-relaxed mb-10">
+        Contact our senior team for a confidential consultation about your requirements.
+      </p>
+      <a href="/contact" class="inline-block px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-colors">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

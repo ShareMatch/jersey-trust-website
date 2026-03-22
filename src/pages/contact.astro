@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact Us" description="Get in touch with Jersey Trust for RAK ICC Foundations, company formation, and corporate services in the UAE.">
+  <Header slot="header" />
+
+  <section class="pt-32 pb-24 bg-jt-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl mb-16">
+        <p class="text-jt-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">Contact Us</p>
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-jt-navy mb-6">
+          Let's Discuss Your Requirements
+        </h1>
+        <p class="text-jt-slate text-lg leading-relaxed">
+          Whether you are exploring asset protection, company formation, or banking solutions, our senior team is ready to provide a confidential consultation.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16">
+        <!-- Contact Form -->
+        <div class="bg-white rounded-lg p-8 lg:p-10 shadow-sm">
+          <form action="https://formsubmit.co/info@jerseytrust.ae" method="POST" class="space-y-6">
+            <input type="hidden" name="_subject" value="New enquiry from jerseytrust.ae" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="text" name="_honey" style="display:none" />
+
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-medium text-jt-navy mb-2">Full Name</label>
+                <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-jt-red/20 focus:border-jt-red transition-colors" />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-jt-navy mb-2">Email Address</label>
+                <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-jt-red/20 focus:border-jt-red transition-colors" />
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div>
+                <label for="phone" class="block text-sm font-medium text-jt-navy mb-2">Phone Number</label>
+                <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-jt-red/20 focus:border-jt-red transition-colors" />
+              </div>
+              <div>
+                <label for="service" class="block text-sm font-medium text-jt-navy mb-2">Service of Interest</label>
+                <select id="service" name="service" class="w-full px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-jt-red/20 focus:border-jt-red transition-colors bg-white">
+                  <option value="">Select a service</option>
+                  <option value="RAK ICC Foundation">RAK ICC Foundation</option>
+                  <option value="Company Formation">Company Formation</option>
+                  <option value="Bank Account Setup">Bank Account Setup</option>
+                  <option value="Golden Visa">Golden Visa Support</option>
+                  <option value="PRO Services">PRO Services</option>
+                  <option value="Tax & VAT">Tax & VAT Registration</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-jt-navy mb-2">How Can We Help?</label>
+              <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-200 rounded text-sm focus:outline-none focus:ring-2 focus:ring-jt-red/20 focus:border-jt-red transition-colors resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-colors">
+              Send Enquiry
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="space-y-10">
+          <div>
+            <h3 class="font-display text-xl font-semibold text-jt-navy mb-4">Our Office</h3>
+            <p class="text-jt-slate leading-relaxed">
+              Office 807, Westbury Office Tower<br />
+              Marasi Drive, Business Bay<br />
+              Dubai, United Arab Emirates
+            </p>
+          </div>
+
+          <div>
+            <h3 class="font-display text-xl font-semibold text-jt-navy mb-4">Direct Contact</h3>
+            <ul class="space-y-3">
+              <li>
+                <a href="tel:+97143346005" class="text-jt-slate hover:text-jt-red transition-colors">
+                  +971 (0)4 334 6005
+                </a>
+              </li>
+              <li>
+                <a href="mailto:info@jerseytrust.ae" class="text-jt-slate hover:text-jt-red transition-colors">
+                  info@jerseytrust.ae
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/971585035674" target="_blank" rel="noopener" class="text-jt-slate hover:text-jt-red transition-colors">
+                  WhatsApp: +971 58 503 5674
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-display text-xl font-semibold text-jt-navy mb-4">Locations</h3>
+            <p class="text-jt-slate text-sm leading-relaxed">
+              Dubai | Ras Al Khaimah | Jersey | London
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

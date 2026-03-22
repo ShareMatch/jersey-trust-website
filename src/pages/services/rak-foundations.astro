@@ -1,0 +1,146 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const faqs = [
+  {
+    q: 'What can a Foundation own?',
+    a: 'Foundations can hold any asset, including property, shares in other companies, bonds, personal chattels, and investment portfolios.',
+  },
+  {
+    q: 'How do Foundations differ from Trusts?',
+    a: 'Foundations are an "orphan structure" which is self-owning with greater independence. They are distinct legal entities, whereas Trusts depend on the Trustee. The Founder retains control via the Charter and By-Laws. Foundations are also designed to function in perpetuity, unlike time-limited Trusts.',
+  },
+  {
+    q: 'Can I redomicile my existing structure?',
+    a: 'Yes. Existing Foundations in other jurisdictions can typically be redomiciled to RAKICC. Existing RAKICC Companies can also be converted to Foundations. Foreign entities can be re-domiciled to RAKICC and then converted.',
+  },
+  {
+    q: 'Can Foundations open bank accounts?',
+    a: 'Yes. If a given bank is unwilling to open accounts for Foundations directly, a RAKICC subsidiary company can be established which can open accounts with traditional banks and EMIs.',
+  },
+  {
+    q: 'What courts apply?',
+    a: 'RAKICC Foundations are drafted in accordance with Common Law. At establishment, Founders may choose RAK Courts, DIFC Courts, or ADGM Courts.',
+  },
+  {
+    q: 'How long does setup take?',
+    a: 'Once submitted, your Foundation can be ready in as few as 3 business days. Faster turnaround is available if needed. UAE presence is not required.',
+  },
+];
+---
+
+<Layout title="RAK ICC Foundations" description="RAK ICC Foundations offer world-class asset protection, succession planning, and confidentiality. Jersey Trust is a licensed RAK ICC Registered Agent.">
+  <Header slot="header" />
+
+  <!-- Hero -->
+  <section class="pt-32 pb-24 bg-jt-navy relative">
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-jt-gold-light text-sm font-semibold tracking-[0.2em] uppercase mb-4">Our Signature Service</p>
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+          RAK ICC Foundations
+        </h1>
+        <p class="text-gray-300 text-lg leading-relaxed">
+          Among the most secure, versatile, and cost-effective structures available globally for sophisticated asset protection, wealth management, and succession planning.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What They Are -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <div>
+          <h2 class="text-3xl font-display font-bold text-jt-navy mb-6">What Is a RAK ICC Foundation?</h2>
+          <div class="space-y-4 text-jt-slate leading-relaxed">
+            <p>RAKICC Foundations are distinct legal entities with no shareholders and no directors. They are established by a <strong class="text-jt-navy">Founder</strong>, who sets out their wishes in the Charter and By-Laws, which are highly customisable.</p>
+            <p>The Founder appoints <strong class="text-jt-navy">Council Members</strong> to oversee the Foundation and retains the power to remove them. The Founder also designates <strong class="text-jt-navy">Qualified Recipients</strong> (beneficiaries) and a <strong class="text-jt-navy">Guardian</strong> who can step in if needed.</p>
+            <p>Once established, the Foundation functions in perpetuity as an <strong class="text-jt-navy">"Orphan Structure"</strong>, meaning it is self-owning. The Founder can amend any counterparties at any time.</p>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <h3 class="text-xl font-display font-semibold text-jt-navy">Key Participants</h3>
+          <div class="space-y-4">
+            {[
+              { role: 'Founder', desc: 'Establishes the Foundation and sets the Charter and By-Laws. Retains control and can be a Qualified Recipient.' },
+              { role: 'Council Members', desc: 'Oversee the Foundation and are bound to follow the Founder\'s wishes. Appointed and removable by the Founder.' },
+              { role: 'Qualified Recipients', desc: 'The beneficiaries of the structure, designated by the Founder.' },
+              { role: 'Guardian', desc: 'Steps in should the Founder be unable to carry out their duties.' },
+              { role: 'Registered Agent', desc: 'Handles corporate governance and maintenance. Jersey Trust serves as your Registered Agent.' },
+            ].map((item) => (
+              <div class="bg-jt-cream rounded-lg p-5">
+                <p class="font-semibold text-jt-navy text-sm">{item.role}</p>
+                <p class="text-sm text-jt-slate mt-1">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features -->
+  <section class="py-24 bg-jt-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-jt-navy">Key Features & Strengths</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {[
+          { title: 'Asset Protection', desc: 'A distinct legal personality separates assets from the Founder\'s personal estate, offering protection against creditors, political instability, and potential claims.' },
+          { title: 'Confidentiality', desc: 'No public registry. RAKICC is not compelled to disclose information to any Court or public body regarding ownership, management, or assets.' },
+          { title: 'Succession Planning', desc: 'Smooth, efficient transfer of assets across generations according to the Founder\'s wishes, without the complexities of probate.' },
+          { title: 'Legal Firewall', desc: '2025 amendments introduced Firewall provisions shielding Foundations from foreign judgements that conflict with RAKICC regulations.' },
+          { title: 'Statute of Limitations', desc: 'A 3-year statute of limitations provides legal certainty against claims relating to establishment or asset transfers into the Foundation.' },
+          { title: 'Tax Efficiency', desc: 'Foundations can be eligible for UAE tax exemption. Wholly-owned subsidiaries may also qualify for tax transparency.' },
+        ].map((feature) => (
+          <div class="bg-white rounded-lg p-8">
+            <h3 class="font-display text-lg font-semibold text-jt-navy mb-3">{feature.title}</h3>
+            <p class="text-sm text-jt-slate leading-relaxed">{feature.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 bg-white">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-jt-navy">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <details class="group border-b border-gray-200 pb-6">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="font-semibold text-jt-navy pr-4">{faq.q}</h3>
+              <svg class="w-5 h-5 text-jt-slate shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="text-jt-slate text-sm leading-relaxed mt-4">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-jt-navy">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-display font-bold text-white mb-6">Ready to Establish Your Foundation?</h2>
+      <p class="text-gray-300 text-lg leading-relaxed mb-10">
+        Our team will guide you through every step, from initial consultation to ongoing management.
+      </p>
+      <a href="/contact" class="inline-block px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-colors">
+        Book a Consultation
+      </a>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
