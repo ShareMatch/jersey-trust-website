@@ -4,23 +4,45 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title, description = 'Jersey Trust is a UAE-based Corporate Services Provider specialising in RAK ICC Foundations, company formation, and corporate structuring for HNWIs, entrepreneurs, and family offices worldwide.' } = Astro.props;
+const { title, description = 'Jersey Trust is a UAE-based Corporate Services Provider specialising in RAK ICC Foundations, company formation, and corporate structuring for HNWIs, entrepreneurs, and family offices worldwide.', ogImage = '/images/jersey-trust-logo.png' } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = `${title} | Jersey Trust`;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="/images/jersey-trust-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL.href} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).href} />
+    <meta property="og:site_name" content="Jersey Trust" />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@jerseytrust_ae" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site).href} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <title>{title} | Jersey Trust</title>
+    <title>{fullTitle}</title>
   </head>
   <body class="min-h-screen flex flex-col">
     <slot name="header" />
