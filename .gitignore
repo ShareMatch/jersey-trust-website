@@ -17,6 +17,10 @@ pnpm-debug.log*
 .env
 .env.production
 
+# promo videos (too large for git)
+promo-videos/
+public/videos/
+
 # macOS-specific files
 .DS_Store
 

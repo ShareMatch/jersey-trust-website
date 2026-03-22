@@ -1,0 +1,42 @@
+---
+interface Props {
+  desktopSrc: string;
+  mobileSrc?: string;
+  poster?: string;
+}
+
+const { desktopSrc, mobileSrc, poster } = Astro.props;
+---
+
+<div class="absolute inset-0 z-0 overflow-hidden">
+  {mobileSrc && (
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      poster={poster}
+      class="block md:hidden absolute inset-0 w-full h-full object-cover grayscale-[0.2] brightness-50"
+    >
+      <source src={mobileSrc} type="video/mp4" />
+    </video>
+  )}
+  
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    poster={poster}
+    class:list={[
+      "absolute inset-0 w-full h-full object-cover grayscale-[0.2] brightness-50",
+      mobileSrc ? "hidden md:block" : "block"
+    ]}
+  >
+    <source src={desktopSrc} type="video/mp4" />
+  </video>
+
+  <!-- Overlay to ensure readability -->
+  <div class="absolute inset-0 bg-jt-navy/40 mix-blend-multiply"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-jt-navy/60 via-transparent to-jt-navy/80"></div>
+</div>

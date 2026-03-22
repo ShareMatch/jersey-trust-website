@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import VideoBackground from '../../components/VideoBackground.astro';
 
 const faqs = [
   {
@@ -35,15 +36,21 @@ const faqs = [
   <Header slot="header" />
 
   <!-- Hero -->
-  <section class="pt-32 pb-24 bg-jt-navy relative">
-    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent"></div>
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+  <section class="relative pt-32 pb-24 bg-jt-navy overflow-hidden">
+    <VideoBackground 
+      desktopSrc="/videos/rak_foundations.mp4" 
+      poster="/images/jersey-trust-logo.png"
+    />
+    
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent z-10"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
       <div class="max-w-3xl">
-        <p class="text-jt-gold-light text-sm font-semibold tracking-[0.2em] uppercase mb-4">Our Signature Service</p>
-        <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">
+        <p class="text-jt-gold-light text-sm font-semibold tracking-[0.2em] uppercase mb-4 drop-shadow-lg">Our Signature Service</p>
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-6 drop-shadow-2xl">
           RAK ICC Foundations
         </h1>
-        <p class="text-gray-300 text-lg leading-relaxed">
+        <p class="text-gray-200 text-lg leading-relaxed drop-shadow-lg">
           Among the most secure, versatile, and cost-effective structures available globally for sophisticated asset protection, wealth management, and succession planning.
         </p>
       </div>

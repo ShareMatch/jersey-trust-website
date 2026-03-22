@@ -15,11 +15,11 @@ function isActive(href: string): boolean {
 }
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       <a href="/" class="flex items-center gap-3">
-        <img src="/images/jersey-trust-logo-200.webp" alt="Jersey Trust" class="h-14 w-auto" />
+        <img src="/images/jersey-trust-logo-updated.png" alt="Jersey Trust" class="h-14 w-auto" />
       </a>
 
       <nav class="hidden lg:flex items-center gap-8" aria-label="Main navigation">
@@ -27,8 +27,8 @@ function isActive(href: string): boolean {
           <a
             href={item.href}
             class:list={[
-              'text-sm font-medium transition-colors tracking-wide uppercase',
-              isActive(item.href) ? 'text-jt-red' : 'text-jt-slate hover:text-jt-red',
+              'text-sm font-medium transition-colors tracking-wide uppercase nav-link',
+              isActive(item.href) ? 'text-jt-red active' : 'text-jt-slate hover:text-jt-red',
             ]}
             aria-current={isActive(item.href) ? 'page' : undefined}
           >
@@ -88,10 +88,38 @@ function isActive(href: string): boolean {
 </header>
 
 <script>
+  const header = document.getElementById('main-header');
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   const iconOpen = document.getElementById('menu-icon-open');
   const iconClose = document.getElementById('menu-icon-close');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  function updateHeader() {
+    if (window.scrollY > 20) {
+      header?.classList.add('bg-white/95', 'backdrop-blur-sm', 'border-gray-100', 'shadow-sm');
+      header?.classList.remove('border-transparent');
+      navLinks.forEach(link => {
+        if (!link.classList.contains('active')) {
+          link.classList.add('text-jt-slate');
+          link.classList.remove('text-white');
+        }
+      });
+    } else {
+      header?.classList.remove('bg-white/95', 'backdrop-blur-sm', 'border-gray-100', 'shadow-sm');
+      header?.classList.add('border-transparent');
+      // On hero, make links white if they're not the active red one
+      navLinks.forEach(link => {
+        if (!link.classList.contains('active')) {
+          link.classList.remove('text-jt-slate');
+          link.classList.add('text-white');
+        }
+      });
+    }
+  }
+
+  window.addEventListener('scroll', updateHeader);
+  updateHeader(); // Initial check
 
   btn?.addEventListener('click', () => {
     const isOpen = !menu?.classList.contains('hidden');

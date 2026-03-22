@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import VideoBackground from '../components/VideoBackground.astro';
 
 const services = [
   {
@@ -75,32 +76,44 @@ const differentiators = [
 
   <!-- Hero -->
   <section class="relative min-h-[90vh] flex items-center bg-jt-navy overflow-hidden pt-20">
-    <!-- Subtle gradient overlay -->
-    <div class="absolute inset-0 bg-gradient-to-br from-jt-navy via-jt-charcoal to-jt-navy"></div>
+    <VideoBackground 
+      desktopSrc="/videos/hero_desktop.mp4" 
+      mobileSrc="/videos/hero_mobile.mp4" 
+      poster="/images/jersey-trust-logo.png"
+    />
+    
     <!-- Gold accent line -->
-    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent"></div>
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent z-10"></div>
 
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32 z-10">
       <div class="max-w-3xl">
-        <p class="text-jt-gold-light text-sm font-semibold tracking-[0.2em] uppercase mb-6">
+        <p class="text-jt-gold-light text-sm font-semibold tracking-[0.2em] uppercase mb-6 drop-shadow-lg">
           Licensed Corporate Services Provider & RAK ICC Registered Agent
         </p>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-8">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-8 drop-shadow-2xl">
           Structures Built to
           <span class="text-jt-gold-light">Protect</span> and
           <span class="text-jt-gold-light">Endure</span>
         </h1>
-        <p class="text-lg md:text-xl text-gray-300 leading-relaxed mb-10 max-w-2xl">
+        <p class="text-lg md:text-xl text-gray-200 leading-relaxed mb-10 max-w-2xl drop-shadow-lg">
           We specialise in RAK ICC Foundations, corporate structuring, and banking solutions for high-net-worth individuals, family offices, and entrepreneurs worldwide.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/services/rak-foundations" class="px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-colors text-center">
+          <a href="/services/rak-foundations" class="px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-all hover:scale-105 shadow-xl text-center">
             Explore RAK Foundations
           </a>
-          <a href="/contact" class="px-8 py-4 border border-jt-gold-light text-jt-gold-light font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-gold-light hover:text-jt-navy transition-colors text-center">
+          <a href="/contact" class="px-8 py-4 border border-jt-gold-light text-jt-gold-light font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-gold-light hover:text-jt-navy transition-all hover:scale-105 shadow-xl text-center backdrop-blur-sm bg-jt-navy/20">
             Book a Consultation
           </a>
         </div>
+      </div>
+    </div>
+
+    <!-- Scroll Down Indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:block">
+      <div class="flex flex-col items-center gap-2">
+        <span class="text-jt-gold-light text-[10px] uppercase tracking-[0.3em] font-semibold opacity-70">Scroll</span>
+        <div class="w-px h-12 bg-gradient-to-b from-jt-gold-light to-transparent"></div>
       </div>
     </div>
   </section>
@@ -164,35 +177,52 @@ const differentiators = [
             </svg>
           </a>
         </div>
-        <div class="bg-jt-cream rounded-lg p-10 lg:p-12">
-          <h3 class="font-display text-xl font-semibold text-jt-navy mb-6">How It Works</h3>
-          <div class="space-y-6">
-            <div class="flex items-start gap-4">
-              <div class="w-8 h-8 rounded-full bg-jt-red text-white flex items-center justify-center text-sm font-bold shrink-0">1</div>
-              <div>
-                <p class="font-semibold text-jt-navy">Consultation</p>
-                <p class="text-sm text-jt-slate mt-1">We assess your objectives and recommend the optimal structure.</p>
-              </div>
+        <div class="relative group">
+          <div class="absolute -inset-2 bg-gradient-to-r from-jt-red to-jt-gold rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+          <div class="relative bg-jt-cream rounded-lg overflow-hidden shadow-2xl">
+            <div class="aspect-video relative overflow-hidden bg-jt-navy">
+              <video
+                autoplay
+                muted
+                loop
+                playsinline
+                class="absolute inset-0 w-full h-full object-cover"
+              >
+                <source src="/videos/rak_foundations.mp4" type="video/mp4" />
+              </video>
+              <div class="absolute inset-0 bg-jt-navy/20"></div>
             </div>
-            <div class="flex items-start gap-4">
-              <div class="w-8 h-8 rounded-full bg-jt-red text-white flex items-center justify-center text-sm font-bold shrink-0">2</div>
-              <div>
-                <p class="font-semibold text-jt-navy">Documentation</p>
-                <p class="text-sm text-jt-slate mt-1">We draft the Charter and By-Laws, tailored to your specific requirements.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4">
-              <div class="w-8 h-8 rounded-full bg-jt-red text-white flex items-center justify-center text-sm font-bold shrink-0">3</div>
-              <div>
-                <p class="font-semibold text-jt-navy">Establishment</p>
-                <p class="text-sm text-jt-slate mt-1">Your foundation is registered, typically within 3 business days. No UAE presence required.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-4">
-              <div class="w-8 h-8 rounded-full bg-jt-red text-white flex items-center justify-center text-sm font-bold shrink-0">4</div>
-              <div>
-                <p class="font-semibold text-jt-navy">Ongoing Management</p>
-                <p class="text-sm text-jt-slate mt-1">As your Registered Agent, we handle annual compliance and governance.</p>
+            <div class="p-8 lg:p-10">
+              <h3 class="font-display text-xl font-semibold text-jt-navy mb-6">How It Works</h3>
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-8 h-8 rounded-full bg-jt-red text-white flex items-center justify-center text-sm font-bold shrink-0 shadow-lg">1</div>
+                  <div>
+                    <p class="font-semibold text-jt-navy">Consultation</p>
+                    <p class="text-sm text-jt-slate mt-1">We assess your objectives and recommend the optimal structure.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="w-8 h-8 rounded-full bg-jt-red text-white flex items-center justify-center text-sm font-bold shrink-0 shadow-lg">2</div>
+                  <div>
+                    <p class="font-semibold text-jt-navy">Documentation</p>
+                    <p class="text-sm text-jt-slate mt-1">We draft the Charter and By-Laws, tailored to your specific requirements.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="w-8 h-8 rounded-full bg-jt-red text-white flex items-center justify-center text-sm font-bold shrink-0 shadow-lg">3</div>
+                  <div>
+                    <p class="font-semibold text-jt-navy">Establishment</p>
+                    <p class="text-sm text-jt-slate mt-1">Your foundation is registered, typically within 3 business days. No UAE presence required.</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-4">
+                  <div class="w-8 h-8 rounded-full bg-jt-red text-white flex items-center justify-center text-sm font-bold shrink-0 shadow-lg">4</div>
+                  <div>
+                    <p class="font-semibold text-jt-navy">Ongoing Management</p>
+                    <p class="text-sm text-jt-slate mt-1">As your Registered Agent, we handle annual compliance and governance.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
