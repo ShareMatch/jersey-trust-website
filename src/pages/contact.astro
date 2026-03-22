@@ -100,33 +100,19 @@ import Footer from '../components/Footer.astro';
               btn.disabled = true;
               btn.textContent = 'Sending...';
 
-              try {
-                const res = await fetch('/api/contact', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({
-                    name: name.trim(),
-                    email: email.trim(),
-                    phone: (data.get('phone') as string)?.trim() || '',
-                    service: (data.get('service') as string) || '',
-                    message: message.trim(),
-                  }),
-                });
+              const phone = (data.get('phone') as string)?.trim() || 'Not provided';
+              const service = (data.get('service') as string) || 'Not specified';
+              const subject = encodeURIComponent(`Website Enquiry from ${name.trim()}`);
+              const body = encodeURIComponent(
+                `Name: ${name.trim()}\nEmail: ${email.trim()}\nPhone: ${phone}\nService: ${service}\n\nMessage:\n${message.trim()}`
+              );
 
-                if (res.ok) {
-                  status.textContent = 'Thank you. Your enquiry has been sent. We will be in touch shortly.';
-                  status.className = 'text-center text-sm py-3 rounded bg-green-50 text-green-700';
-                  form.reset();
-                } else {
-                  throw new Error('Failed');
-                }
-              } catch {
-                status.textContent = 'Something went wrong. Please email us directly at info@jerseytrust.ae';
-                status.className = 'text-center text-sm py-3 rounded bg-red-50 text-red-700';
-              } finally {
-                btn.disabled = false;
-                btn.textContent = 'Send Enquiry';
-              }
+              window.location.href = `mailto:info@jerseytrust.ae?subject=${subject}&body=${body}`;
+
+              status.textContent = 'Opening your email client. If it does not open, please email info@jerseytrust.ae directly.';
+              status.className = 'text-center text-sm py-3 rounded bg-green-50 text-green-700';
+              btn.disabled = false;
+              btn.textContent = 'Send Enquiry';
             });
           </script>
         </div>

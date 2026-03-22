@@ -1,4 +1,9 @@
 ---
+interface Props {
+  darkHero?: boolean;
+}
+
+const { darkHero = false } = Astro.props;
 const pathname = Astro.url.pathname;
 
 const navItems = [
@@ -13,9 +18,12 @@ function isActive(href: string): boolean {
   if (href === '/') return pathname === '/' || pathname === '';
   return pathname.startsWith(href);
 }
+
+const defaultLinkColour = darkHero ? 'text-white hover:text-jt-gold-light' : 'text-jt-slate hover:text-jt-red';
+const mobileButtonColour = darkHero ? 'text-white' : 'text-jt-navy';
 ---
 
-<header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent">
+<header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent" data-dark-hero={darkHero ? 'true' : 'false'}>
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
     <div class="flex items-center justify-between h-20">
       <a href="/" class="flex items-center gap-3">
@@ -28,7 +36,7 @@ function isActive(href: string): boolean {
             href={item.href}
             class:list={[
               'text-sm font-medium transition-colors tracking-wide uppercase nav-link',
-              isActive(item.href) ? 'text-jt-red active' : 'text-jt-slate hover:text-jt-red',
+              isActive(item.href) ? 'text-jt-red active' : defaultLinkColour,
             ]}
             aria-current={isActive(item.href) ? 'page' : undefined}
           >
@@ -48,7 +56,7 @@ function isActive(href: string): boolean {
 
       <button
         id="mobile-menu-btn"
-        class="lg:hidden p-2 text-jt-navy"
+        class:list={['lg:hidden p-2 mobile-menu-btn', mobileButtonColour]}
         aria-label="Open menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -94,6 +102,8 @@ function isActive(href: string): boolean {
   const iconOpen = document.getElementById('menu-icon-open');
   const iconClose = document.getElementById('menu-icon-close');
   const navLinks = document.querySelectorAll('.nav-link');
+  const mobileBtn = document.querySelector('.mobile-menu-btn');
+  const isDarkHero = header?.dataset.darkHero === 'true';
 
   function updateHeader() {
     if (window.scrollY > 20) {
@@ -102,24 +112,34 @@ function isActive(href: string): boolean {
       navLinks.forEach(link => {
         if (!link.classList.contains('active')) {
           link.classList.add('text-jt-slate');
-          link.classList.remove('text-white');
+          link.classList.remove('text-white', 'hover:text-jt-gold-light');
+          link.classList.add('hover:text-jt-red');
         }
       });
+      if (mobileBtn) {
+        mobileBtn.classList.add('text-jt-navy');
+        mobileBtn.classList.remove('text-white');
+      }
     } else {
       header?.classList.remove('bg-white/95', 'backdrop-blur-sm', 'border-gray-100', 'shadow-sm');
       header?.classList.add('border-transparent');
-      // On hero, make links white if they're not the active red one
-      navLinks.forEach(link => {
-        if (!link.classList.contains('active')) {
-          link.classList.remove('text-jt-slate');
-          link.classList.add('text-white');
+      if (isDarkHero) {
+        navLinks.forEach(link => {
+          if (!link.classList.contains('active')) {
+            link.classList.remove('text-jt-slate', 'hover:text-jt-red');
+            link.classList.add('text-white', 'hover:text-jt-gold-light');
+          }
+        });
+        if (mobileBtn) {
+          mobileBtn.classList.remove('text-jt-navy');
+          mobileBtn.classList.add('text-white');
         }
-      });
+      }
     }
   }
 
   window.addEventListener('scroll', updateHeader);
-  updateHeader(); // Initial check
+  updateHeader();
 
   btn?.addEventListener('click', () => {
     const isOpen = !menu?.classList.contains('hidden');
