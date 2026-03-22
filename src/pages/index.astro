@@ -72,7 +72,8 @@ const differentiators = [
 ---
 
 <Layout title="Corporate Services & RAK ICC Foundations" description="Jersey Trust is a UAE-based Corporate Services Provider specialising in RAK ICC Foundations, company formation, and corporate structuring for HNWIs, entrepreneurs, and family offices worldwide.">
-  <Header slot="header" darkHero />
+  <Header slot="header" darkHero={true} />
+
 
   <!-- Hero -->
   <section class="relative min-h-[90vh] flex items-center bg-jt-navy overflow-hidden pt-20">
@@ -301,20 +302,24 @@ const differentiators = [
 
   <!-- CTA -->
   <section class="py-24 bg-jt-navy relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-jt-navy via-jt-charcoal to-jt-navy"></div>
-    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent"></div>
-    <div class="relative max-w-3xl mx-auto px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6">
+    <VideoBackground 
+      desktopSrc="/videos/cta_background.mp4" 
+      poster="/images/jersey-trust-logo.png"
+    />
+    
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent z-10"></div>
+    <div class="relative max-w-3xl mx-auto px-6 lg:px-8 text-center z-10">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6 drop-shadow-2xl">
         Ready to Structure Your Future?
       </h2>
-      <p class="text-gray-300 text-lg leading-relaxed mb-10">
+      <p class="text-gray-200 text-lg leading-relaxed mb-10 drop-shadow-lg">
         Whether you are exploring RAK ICC Foundations, setting up a UAE company, or seeking banking solutions, our team is ready to help.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-colors">
+        <a href="/contact" class="px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-all hover:scale-105 shadow-xl">
           Book a Consultation
         </a>
-        <a href="https://wa.me/971585035674" target="_blank" rel="noopener" class="px-8 py-4 border border-jt-gold-light text-jt-gold-light font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-gold-light hover:text-jt-navy transition-colors">
+        <a href="https://wa.me/971585035674" target="_blank" rel="noopener" class="px-8 py-4 border border-jt-gold-light text-jt-gold-light font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-gold-light hover:text-jt-navy transition-all hover:scale-105 shadow-xl backdrop-blur-sm bg-jt-navy/20">
           WhatsApp Us
         </a>
       </div>

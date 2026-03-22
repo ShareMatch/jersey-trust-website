@@ -16,7 +16,9 @@ const navItems = [
 
 function isActive(href: string): boolean {
   if (href === '/') return pathname === '/' || pathname === '';
-  return pathname.startsWith(href);
+  if (href === '/services') return pathname === '/services' || pathname === '/services/';
+  if (href === '/services/rak-foundations') return pathname === '/services/rak-foundations' || pathname === '/services/rak-foundations/';
+  return pathname === href || pathname === `${href}/`;
 }
 
 const defaultLinkColour = darkHero ? 'text-white hover:text-jt-gold-light' : 'text-jt-slate hover:text-jt-red';

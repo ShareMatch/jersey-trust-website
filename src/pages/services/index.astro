@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import VideoBackground from '../../components/VideoBackground.astro';
 
 const services = [
   {
@@ -40,16 +41,23 @@ const services = [
 ---
 
 <Layout title="Services" description="Jersey Trust provides comprehensive corporate services including RAK ICC Foundations, company formation, banking, Golden Visa support, and more.">
-  <Header slot="header" />
+  <Header slot="header" darkHero={true} />
 
-  <section class="pt-32 pb-24 bg-jt-cream">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+  <section class="relative pt-32 pb-24 bg-jt-navy overflow-hidden">
+    <VideoBackground 
+      desktopSrc="/videos/services_hero.mp4" 
+      poster="/images/jersey-trust-logo.png"
+    />
+    
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent z-10"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
       <div class="max-w-3xl mb-16">
-        <p class="text-jt-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">Our Services</p>
-        <h1 class="text-4xl md:text-5xl font-display font-bold text-jt-navy mb-6">
+        <p class="text-jt-gold-light text-sm font-semibold tracking-[0.2em] uppercase mb-4 drop-shadow-lg">Our Services</p>
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-6 drop-shadow-2xl">
           Comprehensive Corporate Structuring
         </h1>
-        <p class="text-jt-slate text-lg leading-relaxed">
+        <p class="text-gray-200 text-lg leading-relaxed drop-shadow-lg">
           We are destination-agnostic and aim to provide structures suited to your specific needs. From RAK ICC Foundations to Dubai Mainland companies, we cover the full spectrum.
         </p>
       </div>
@@ -116,12 +124,21 @@ const services = [
         ))}
       </div>
 
-      <div class="mt-16 text-center">
-        <p class="text-jt-slate mb-4">We also offer structures in DIFC, ADGM, DMCC, UAQ, Jersey, Guernsey, and BVI.</p>
-        <a href="/contact" class="inline-block px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-colors">
-          Discuss Your Requirements
-        </a>
-      </div>
+  <section class="py-24 bg-jt-navy relative overflow-hidden">
+    <VideoBackground 
+      desktopSrc="/videos/cta_background.mp4" 
+      poster="/images/jersey-trust-logo.png"
+    />
+    
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent z-10"></div>
+    <div class="relative max-w-3xl mx-auto px-6 lg:px-8 text-center z-10">
+      <h2 class="text-3xl font-display font-bold text-white mb-6 drop-shadow-2xl">Ready to Start?</h2>
+      <p class="text-gray-200 text-lg leading-relaxed mb-10 drop-shadow-lg">
+        We also offer structures in DIFC, ADGM, DMCC, UAQ, Jersey, Guernsey, and BVI. Discuss your specific requirements with our team.
+      </p>
+      <a href="/contact" class="inline-block px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-all hover:scale-105 shadow-xl">
+        Discuss Your Requirements
+      </a>
     </div>
   </section>
 

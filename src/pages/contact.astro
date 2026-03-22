@@ -2,19 +2,27 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import VideoBackground from '../components/VideoBackground.astro';
 ---
 
 <Layout title="Contact Us" description="Get in touch with Jersey Trust for RAK ICC Foundations, company formation, and corporate services in the UAE.">
-  <Header slot="header" />
+  <Header slot="header" darkHero={true} />
 
-  <section class="pt-32 pb-24 bg-jt-cream">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+  <section class="relative pt-32 pb-24 bg-jt-navy overflow-hidden">
+    <VideoBackground 
+      desktopSrc="/videos/contact_hero.mp4" 
+      poster="/images/jersey-trust-logo.png"
+    />
+    
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent z-10"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
       <div class="max-w-2xl mb-16">
-        <p class="text-jt-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">Contact Us</p>
-        <h1 class="text-4xl md:text-5xl font-display font-bold text-jt-navy mb-6">
+        <p class="text-jt-gold-light text-sm font-semibold tracking-[0.2em] uppercase mb-4 drop-shadow-lg">Contact Us</p>
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-6 drop-shadow-2xl">
           Let's Discuss Your Requirements
         </h1>
-        <p class="text-jt-slate text-lg leading-relaxed">
+        <p class="text-gray-200 text-lg leading-relaxed drop-shadow-lg">
           Whether you are exploring asset protection, company formation, or banking solutions, our senior team is ready to provide a confidential consultation.
         </p>
       </div>
