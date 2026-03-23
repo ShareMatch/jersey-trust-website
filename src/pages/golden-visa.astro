@@ -1,0 +1,229 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const eligibility = [
+  {
+    title: 'Investors',
+    description: 'Real estate investors, public investment holders, or those with significant capital deposits in the UAE.',
+    icon: 'chart',
+  },
+  {
+    title: 'Entrepreneurs',
+    description: 'Founders of approved startups or existing businesses generating significant revenue in the UAE.',
+    icon: 'rocket',
+  },
+  {
+    title: 'Specialised Talent',
+    description: 'Professionals in science, engineering, medicine, technology, and other specialist fields.',
+    icon: 'star',
+  },
+  {
+    title: 'Outstanding Students',
+    description: 'High-achieving graduates from UAE and international universities meeting specific criteria.',
+    icon: 'academic',
+  },
+];
+
+const benefits = [
+  '10-year renewable residency visa',
+  'Full family sponsorship (spouse, children, and dependants)',
+  'No requirement for a national sponsor or employer',
+  'Freedom to live, work, and study in the UAE',
+  'Entry and exit flexibility with no minimum stay requirements',
+  '100% business ownership in mainland companies',
+  'Access to world-class healthcare and education',
+  'Gateway to UAE banking and financial services',
+];
+
+const process = [
+  {
+    step: '1',
+    title: 'Eligibility Assessment',
+    description: 'We review your profile, assets, and objectives to confirm your eligibility pathway and advise on the strongest application strategy.',
+  },
+  {
+    step: '2',
+    title: 'Document Preparation',
+    description: 'Our team handles all paperwork, attestations, translations, and supporting documentation. No guesswork, no delays.',
+  },
+  {
+    step: '3',
+    title: 'Application & Filing',
+    description: 'We submit your application through the appropriate channels and manage all government liaison on your behalf.',
+  },
+  {
+    step: '4',
+    title: 'Visa Issuance & Onboarding',
+    description: 'Once approved, we coordinate medical testing, Emirates ID, and visa stamping. Your family applications are processed in parallel.',
+  },
+];
+---
+
+<Layout title="Golden Visa Support" description="End-to-end support for the 10-year UAE Golden Visa. Eligibility assessment, file preparation, family sponsorship, and ongoing support from Jersey Trust.">
+  <Header slot="header" darkHero={true} />
+
+  <!-- Hero -->
+  <section class="relative pt-32 pb-24 bg-jt-navy overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/marketing/ig-golden-visa-apply.png"
+        alt=""
+        class="w-full h-full object-cover opacity-20"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-jt-navy via-jt-navy/90 to-jt-navy/70"></div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent z-10"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-jt-gold-light text-sm font-semibold tracking-[0.2em] uppercase mb-4 drop-shadow-lg">UAE Golden Visa</p>
+          <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-6 drop-shadow-2xl">
+            Your Path to <span class="text-jt-gold-light">10-Year</span> UAE Residency
+          </h1>
+          <p class="text-gray-200 text-lg leading-relaxed mb-8 drop-shadow-lg">
+            The UAE Golden Visa offers long-term residency for investors, entrepreneurs, and specialised talent. Jersey Trust provides end-to-end support, from eligibility assessment to family sponsorship.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/contact" class="px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-all hover:scale-105 shadow-xl text-center">
+              Check Your Eligibility
+            </a>
+            <a href="tel:+971542347788" class="px-8 py-4 border border-jt-gold-light text-jt-gold-light font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-gold-light hover:text-jt-navy transition-all hover:scale-105 shadow-xl text-center backdrop-blur-sm bg-jt-navy/20">
+              Call +971 54 234 7788
+            </a>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img
+            src="/images/marketing/ig-golden-visa-info.png"
+            alt="UAE Golden Visa information"
+            class="rounded-lg shadow-2xl max-w-sm mx-auto"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-jt-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">Why the Golden Visa</p>
+          <h2 class="text-3xl md:text-4xl font-display font-bold text-jt-navy mb-6">
+            A Decade of Certainty
+          </h2>
+          <p class="text-jt-slate leading-relaxed mb-8">
+            The UAE Golden Visa is one of the most attractive long-term residency programmes globally, offering stability, freedom, and access to the UAE's thriving economy.
+          </p>
+          <ul class="space-y-3">
+            {benefits.map((benefit) => (
+              <li class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-jt-red mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-jt-slate text-sm">{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <img
+            src="/images/marketing/ig-golden-visa-apply.png"
+            alt="Apply for UAE Golden Visa"
+            class="rounded-lg shadow-lg w-full"
+            loading="lazy"
+          />
+          <img
+            src="/images/marketing/ig-uae-residency-structuring.png"
+            alt="UAE Residency and Structuring"
+            class="rounded-lg shadow-lg w-full mt-8"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Eligibility -->
+  <section class="py-24 bg-jt-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-jt-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">Eligibility</p>
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-jt-navy">Who Qualifies?</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {eligibility.map((item) => (
+          <div class="bg-white rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
+            <div class="w-14 h-14 bg-jt-navy rounded-full flex items-center justify-center mx-auto mb-5">
+              <svg class="w-7 h-7 text-jt-gold-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {item.icon === 'chart' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />}
+                {item.icon === 'rocket' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.63 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />}
+                {item.icon === 'star' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />}
+                {item.icon === 'academic' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />}
+              </svg>
+            </div>
+            <h3 class="font-display text-lg font-semibold text-jt-navy mb-2">{item.title}</h3>
+            <p class="text-sm text-jt-slate leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-jt-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">Our Process</p>
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-jt-navy">How We Help</h2>
+      </div>
+      <div class="space-y-8">
+        {process.map((item) => (
+          <div class="flex items-start gap-6">
+            <div class="w-12 h-12 rounded-full bg-jt-red text-white flex items-center justify-center text-lg font-bold shrink-0 shadow-lg">
+              {item.step}
+            </div>
+            <div class="pt-1">
+              <h3 class="font-display text-xl font-semibold text-jt-navy mb-2">{item.title}</h3>
+              <p class="text-jt-slate text-sm leading-relaxed">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-jt-navy relative overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/marketing/ig-golden-visa-apply.png"
+        alt=""
+        class="w-full h-full object-cover opacity-10"
+      />
+    </div>
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent z-10"></div>
+    <div class="relative max-w-3xl mx-auto px-6 lg:px-8 text-center z-10">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6 drop-shadow-2xl">
+        Your Golden Visa Awaits
+      </h2>
+      <p class="text-gray-200 text-lg leading-relaxed mb-10 drop-shadow-lg">
+        Schedule a consultation to assess your eligibility and begin your journey to 10-year UAE residency.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-all hover:scale-105 shadow-xl">
+          Book a Consultation
+        </a>
+        <a href="https://wa.me/971542347788" target="_blank" rel="noopener" class="px-8 py-4 border border-jt-gold-light text-jt-gold-light font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-gold-light hover:text-jt-navy transition-all hover:scale-105 shadow-xl backdrop-blur-sm bg-jt-navy/20">
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

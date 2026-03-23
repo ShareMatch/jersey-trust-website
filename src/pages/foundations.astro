@@ -1,0 +1,256 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const useCases = [
+  {
+    title: 'Asset Protection',
+    description: 'Legally separate your personal assets from business risk, creditor claims, and political instability. The Foundation creates a firewall that shields your wealth.',
+    icon: 'shield',
+  },
+  {
+    title: 'Tax Efficiency',
+    description: 'Structured to minimise tax exposure across jurisdictions, legally and compliantly. Foundations can be eligible for UAE corporate tax exemption.',
+    icon: 'calculator',
+  },
+  {
+    title: 'Full Confidentiality',
+    description: 'No public register of founders, beneficiaries, or assets. RAKICC is not compelled to disclose information to any court or public body.',
+    icon: 'lock',
+  },
+  {
+    title: 'Succession Planning',
+    description: 'Ensures your estate is transferred according to your wishes, across borders and generations, without the complexities of probate.',
+    icon: 'family',
+  },
+];
+
+const comparisons = [
+  { feature: 'Legal personality', foundation: 'Yes, distinct entity', trust: 'No, relies on Trustee' },
+  { feature: 'Ownership', foundation: 'Self-owning (orphan)', trust: 'Trustee holds legal title' },
+  { feature: 'Duration', foundation: 'Perpetuity', trust: 'Typically time-limited' },
+  { feature: 'Founder control', foundation: 'Retained via Charter', trust: 'Diminished after creation' },
+  { feature: 'Confidentiality', foundation: 'No public registry', trust: 'Varies by jurisdiction' },
+  { feature: 'Flexibility', foundation: 'Charter amendable at will', trust: 'Often irrevocable' },
+];
+
+const faqs = [
+  {
+    q: 'Who should consider a Foundation?',
+    a: 'Anyone seeking robust asset protection, succession planning, or tax-efficient wealth structuring. Foundations are used by HNWIs, family offices, entrepreneurs, and corporate groups worldwide.',
+  },
+  {
+    q: 'What can a Foundation hold?',
+    a: 'Any asset class, including property, company shares, bonds, investment portfolios, intellectual property, and personal chattels.',
+  },
+  {
+    q: 'Do I need to be in the UAE?',
+    a: 'No. Foundations can be established remotely, and there is no requirement for the Founder, Council Members, or Qualified Recipients to reside in or visit the UAE.',
+  },
+  {
+    q: 'How quickly can a Foundation be set up?',
+    a: 'Typically within 3 business days once documentation is submitted. Expedited options are available.',
+  },
+  {
+    q: 'What are the ongoing costs?',
+    a: 'Annual renewal fees are competitive and predictable. Jersey Trust handles all compliance and governance as your Registered Agent. Contact us for a detailed fee schedule.',
+  },
+];
+---
+
+<Layout title="Foundation Structures" description="Discover how RAK ICC Foundation Structures provide asset protection, tax efficiency, confidentiality, and succession planning for HNWIs and family offices worldwide.">
+  <Header slot="header" darkHero={true} />
+
+  <!-- Hero -->
+  <section class="relative pt-32 pb-24 bg-jt-navy overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/marketing/ig-wealth-across-borders.png"
+        alt=""
+        class="w-full h-full object-cover opacity-20"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-jt-navy via-jt-navy/90 to-jt-navy/70"></div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent z-10"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-jt-gold-light text-sm font-semibold tracking-[0.2em] uppercase mb-4 drop-shadow-lg">Foundation Structures</p>
+          <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-6 drop-shadow-2xl">
+            Protect, Preserve, <span class="text-jt-gold-light">Perform</span>
+          </h1>
+          <p class="text-gray-200 text-lg leading-relaxed mb-8 drop-shadow-lg">
+            A Foundation is a legally separate entity that holds assets on behalf of its beneficiaries, with no shareholders and no directors. It is one of the most private, flexible, and tax-efficient structures available to international investors.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/contact" class="px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-all hover:scale-105 shadow-xl text-center">
+              See If You Qualify
+            </a>
+            <a href="/services/rak-foundations" class="px-8 py-4 border border-jt-gold-light text-jt-gold-light font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-gold-light hover:text-jt-navy transition-all hover:scale-105 shadow-xl text-center backdrop-blur-sm bg-jt-navy/20">
+              Technical Details
+            </a>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img
+            src="/images/marketing/ig-what-is-foundation.png"
+            alt="What is a Foundation Structure"
+            class="rounded-lg shadow-2xl max-w-sm mx-auto"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-jt-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">Why Foundations</p>
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-jt-navy">
+          Four Pillars of Protection
+        </h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        {useCases.map((item) => (
+          <div class="flex items-start gap-6 p-8 bg-jt-cream rounded-lg">
+            <div class="w-12 h-12 bg-jt-navy rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6 text-jt-gold-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {item.icon === 'shield' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />}
+                {item.icon === 'calculator' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25v-.008zm2.25-4.5h.008v.008H10.5v-.008zm0 2.25h.008v.008H10.5v-.008zm0 2.25h.008v.008H10.5v-.008zm2.25-6.75h.008v.008H12.75v-.008zm0 2.25h.008v.008H12.75v-.008zm0 2.25h.008v.008H12.75v-.008zm0 2.25h.008v.008H12.75v-.008zm2.25-6.75h.008v.008H15v-.008zm0 2.25h.008v.008H15v-.008zM15 18h.008v.008H15v-.008zm0-2.25h.008v.008H15v-.008zM6.75 6h10.5A2.25 2.25 0 0119.5 8.25v10.5a2.25 2.25 0 01-2.25 2.25H6.75a2.25 2.25 0 01-2.25-2.25V8.25A2.25 2.25 0 016.75 6z" />}
+                {item.icon === 'lock' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />}
+                {item.icon === 'family' && <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />}
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-display text-xl font-semibold text-jt-navy mb-2">{item.title}</h3>
+              <p class="text-jt-slate text-sm leading-relaxed">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Marketing Visual -->
+  <section class="py-16 bg-jt-warm-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-6">
+        <img
+          src="/images/marketing/ig-foundation-structure-setup.png"
+          alt="Set up your Foundation Structure"
+          class="rounded-lg shadow-lg w-full"
+          loading="lazy"
+        />
+        <img
+          src="/images/marketing/ig-wealth-across-borders.png"
+          alt="Protect your wealth across borders"
+          class="rounded-lg shadow-lg w-full"
+          loading="lazy"
+        />
+        <img
+          src="/images/marketing/ig-what-is-foundation.png"
+          alt="What is a Foundation Structure"
+          class="rounded-lg shadow-lg w-full"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Foundation vs Trust Comparison -->
+  <section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-jt-gold text-sm font-semibold tracking-[0.2em] uppercase mb-4">Comparison</p>
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-jt-navy">Foundation vs Trust</h2>
+        <p class="text-jt-slate mt-4 max-w-2xl mx-auto">
+          Foundations offer significant advantages over traditional trust structures for modern wealth management.
+        </p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="border-b-2 border-jt-navy">
+              <th class="py-4 pr-6 text-sm font-semibold text-jt-slate uppercase tracking-wide">Feature</th>
+              <th class="py-4 pr-6 text-sm font-semibold text-jt-red uppercase tracking-wide">Foundation</th>
+              <th class="py-4 text-sm font-semibold text-jt-slate uppercase tracking-wide">Trust</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparisons.map((row) => (
+              <tr class="border-b border-gray-100">
+                <td class="py-4 pr-6 text-sm font-medium text-jt-navy">{row.feature}</td>
+                <td class="py-4 pr-6 text-sm text-jt-slate">{row.foundation}</td>
+                <td class="py-4 text-sm text-jt-slate">{row.trust}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-8 text-center">
+        <a href="/services/rak-foundations" class="inline-flex items-center gap-2 text-jt-red font-semibold text-sm tracking-wide uppercase hover:text-jt-red-dark transition-colors">
+          Full Technical Details on RAK ICC Foundations
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 bg-jt-cream">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-jt-navy">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <details class="group border-b border-gray-200 pb-6">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <h3 class="font-semibold text-jt-navy pr-4">{faq.q}</h3>
+              <svg class="w-5 h-5 text-jt-slate shrink-0 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <p class="text-jt-slate text-sm leading-relaxed mt-4">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-jt-navy relative overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="/images/marketing/ig-wealth-across-borders.png"
+        alt=""
+        class="w-full h-full object-cover opacity-10"
+      />
+    </div>
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-jt-gold to-transparent z-10"></div>
+    <div class="relative max-w-3xl mx-auto px-6 lg:px-8 text-center z-10">
+      <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-6 drop-shadow-2xl">
+        Is a Foundation Right for You?
+      </h2>
+      <p class="text-gray-200 text-lg leading-relaxed mb-10 drop-shadow-lg">
+        Most people do not know they qualify. Schedule a confidential consultation and find out.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="px-8 py-4 bg-jt-red text-white font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-red-dark transition-all hover:scale-105 shadow-xl">
+          Book a Consultation
+        </a>
+        <a href="https://wa.me/971542347788" target="_blank" rel="noopener" class="px-8 py-4 border border-jt-gold-light text-jt-gold-light font-semibold text-sm tracking-wide uppercase rounded hover:bg-jt-gold-light hover:text-jt-navy transition-all hover:scale-105 shadow-xl backdrop-blur-sm bg-jt-navy/20">
+          WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

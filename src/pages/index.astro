@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import VideoBackground from '../components/VideoBackground.astro';
+import SocialGallery from '../components/SocialGallery.astro';
 
 const services = [
   {
@@ -300,10 +301,13 @@ const differentiators = [
     </div>
   </section>
 
+  <!-- Social Gallery -->
+  <SocialGallery />
+
   <!-- CTA -->
   <section class="py-24 bg-jt-navy relative overflow-hidden">
-    <VideoBackground 
-      desktopSrc="/videos/cta_background.mp4" 
+    <VideoBackground
+      desktopSrc="/videos/cta_background.mp4"
       poster="/images/jersey-trust-logo.png"
     />
     
