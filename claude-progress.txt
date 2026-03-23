@@ -1,0 +1,40 @@
+## Jersey Trust Progress Log
+
+### 2026-03-23 — Paperclip Setup + Outreach Pipeline Active
+
+**State**: Website live at new.jerseytrust.ae (Astro 6 + Tailwind on Cloudflare Pages).
+Outreach pipeline operational: Apollo.io for lead research, Zoho CRM for tracking,
+Gmail (ww@jerseytrust.ae with send-as for nr@jerseytrust.ae) for sending.
+
+**Outreach stats (as of latest harvest)**:
+- Emails sent: 7
+- Reply rate: 14.3% (1 reply from Knight Frank)
+- Pipeline: Apollo.io -> Draft -> Approve -> Send via Gmail -> Log to Zoho + Sheet
+
+**Tools available**:
+- Apollo.io API: APOLLO_API_KEY in ~/.claude/channels/zoho-crm/.env
+- Zoho CRM API: credentials in ~/.claude/channels/zoho-crm/.env
+- Load leads to Zoho: ~/.claude/channels/zoho-crm/load-leads.sh
+- Harvest reply rates: ~/.claude/channels/zoho-crm/harvest-replies.sh
+- Gmail send: mcp__workspace-jerseytrust__gmail_users_messages_send
+- Google Sheets: mcp__workspace-jerseytrust__sheets_spreadsheets_values_*
+- Google Calendar: mcp__workspace-jerseytrust__calendar_events_*
+- Google Drive: mcp__workspace-jerseytrust__drive_files_* (shared drive: 0AKg-SVT433vBUk9PVA)
+- Outreach skill: /jersey-trust-outreach (with references/services.md, icp.md, email-frameworks.md)
+
+**Key people**:
+- Will (ww@jerseytrust.ae) - CEO, approves all outreach
+- Nigel (nr@jerseytrust.ae) - Head of Sales, all cold emails sent from his address
+- Send-as configured: ww@ can send as nr@
+
+**Website pages**: index, about, services, services/rak-foundations, contact, faq, 404
+**Dashboard**: Next.js 16 at ~/developer/sharematch/jersey-trust-dashboard (separate repo)
+
+**Next priorities**:
+1. Scale outreach: research 50 new HNWI leads [JER-5]
+2. Draft and send next email batch [JER-6]
+3. LinkedIn content for Will's profile [JER-7]
+4. Add SEO guide page for RAK Foundations [JER-3]
+5. Website QA + Lighthouse optimisation [JER-4]
+
+**Target**: 20 new clients in Q2 2026

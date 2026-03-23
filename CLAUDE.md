@@ -71,19 +71,43 @@ XDG_CONFIG_HOME=/home/cmwtrading55/.config/gws-jerseytrust gws drive files list 
 - Family offices looking for asset protection and succession planning
 - Business owners needing cross-border structuring
 
+## Outreach Pipeline
+
+Full lead gen and email pipeline is operational:
+
+1. **Research**: Apollo.io API (`APOLLO_API_KEY` in `~/.claude/channels/zoho-crm/.env`) + WebSearch
+2. **Draft**: `/jersey-trust-outreach` skill (references in `~/.claude/skills/jersey-trust-outreach/references/`)
+3. **Approve**: All emails shown to user before sending. NEVER auto-send.
+4. **Send**: `mcp__workspace-jerseytrust__gmail_users_messages_send` (From: nr@jerseytrust.ae, CC: ww@jerseytrust.ae). Send-as is configured: ww@ can send as nr@.
+5. **Log to CRM**: Zoho CRM API (credentials in `~/.claude/channels/zoho-crm/.env`). Load leads via `~/.claude/channels/zoho-crm/load-leads.sh`.
+6. **Track**: Google Sheet via `mcp__workspace-jerseytrust__sheets_spreadsheets_values_append`
+7. **Harvest**: `~/.claude/channels/zoho-crm/harvest-replies.sh` scans Gmail for replies, updates reply rate in `latest-harvest.json`
+
+**Current stats**: 7 emails sent, 14.3% reply rate, 1 reply (Knight Frank).
+
+**Safety rails**: Max 10 emails/batch, never send without approval, always CC Nigel, no attachments on first touch, UK English only.
+
 ## Outreach Guidelines
 
-- Tone: Warm professional, from Will as CEO
+- Tone: Warm professional, from Nigel as Relationship Manager
 - UK English throughout
 - Never bulk-spam; always personalised, always reviewed before sending
-- Nigel must be CC'd on all outreach emails
+- Nigel (nr@jerseytrust.ae) signs all cold emails
+- Will (ww@jerseytrust.ae) CC'd on all outreach
 - Start slow (5-10 emails/day) to protect domain reputation
 
 ## Google Workspace
 
 - Account: ww@jerseytrust.ae
-- MCP server: workspace-jerseytrust
+- MCP server: `workspace-jerseytrust`
 - Drive shared drive ID: `0AKg-SVT433vBUk9PVA`
+- Gmail: send, read, draft, label (also send-as nr@jerseytrust.ae)
+- Calendar, Sheets, Docs, Chat all available
+
+## External APIs
+
+- **Zoho CRM**: Client ID, secret, refresh token in `~/.claude/channels/zoho-crm/.env`
+- **Apollo.io**: API key in same `.env` file. Used for lead enrichment and search.
 
 ## Git
 

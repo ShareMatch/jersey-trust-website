@@ -1,0 +1,107 @@
+[
+  {
+    "id": "F001",
+    "category": "website",
+    "description": "Homepage loads with hero, services overview, and CTA",
+    "steps": ["Navigate to /", "Verify hero renders", "Verify services section", "Verify contact CTA"],
+    "passes": true
+  },
+  {
+    "id": "F002",
+    "category": "website",
+    "description": "RAK Foundations service page with detailed content",
+    "steps": ["Navigate to /services/rak-foundations", "Verify content renders", "Verify CTA links to contact"],
+    "passes": true
+  },
+  {
+    "id": "F003",
+    "category": "website",
+    "description": "Contact form submits and delivers to info@jerseytrust.ae",
+    "steps": ["Navigate to /contact", "Fill form", "Submit", "Verify delivery"],
+    "passes": true
+  },
+  {
+    "id": "F004",
+    "category": "website",
+    "description": "Mobile responsive on all pages at 375px",
+    "steps": ["Set viewport 375x812", "Check each page", "No horizontal scroll", "Touch targets >= 44px"],
+    "passes": false
+  },
+  {
+    "id": "F005",
+    "category": "website",
+    "description": "Lighthouse SEO score > 90 on homepage",
+    "steps": ["Run Lighthouse on /", "Check SEO score", "Fix meta tags if needed"],
+    "passes": false
+  },
+  {
+    "id": "F006",
+    "category": "website",
+    "description": "Cinematic video backgrounds play on all pages",
+    "steps": ["Navigate to each page", "Verify video loads and plays", "No layout shift"],
+    "passes": true
+  },
+  {
+    "id": "F007",
+    "category": "website",
+    "description": "Comprehensive RAK Foundation SEO guide page exists",
+    "steps": ["Navigate to /services/rak-foundations-guide", "Verify long-form content", "Check SEO meta"],
+    "passes": false
+  },
+  {
+    "id": "F008",
+    "category": "outreach",
+    "description": "Apollo.io API returns lead search results",
+    "steps": ["Call Apollo API with search query", "Verify JSON response with leads"],
+    "passes": true
+  },
+  {
+    "id": "F009",
+    "category": "outreach",
+    "description": "Cold emails send from nr@jerseytrust.ae via Gmail MCP",
+    "steps": ["Draft email", "Send via workspace-jerseytrust MCP", "Verify From header shows nr@"],
+    "passes": true
+  },
+  {
+    "id": "F010",
+    "category": "outreach",
+    "description": "Leads logged to Zoho CRM after email sent",
+    "steps": ["Send email", "Run load-leads.sh", "Verify lead appears in Zoho"],
+    "passes": true
+  },
+  {
+    "id": "F011",
+    "category": "outreach",
+    "description": "Outreach tracked in Google Sheet with follow-up dates",
+    "steps": ["Send email", "Verify row appended to tracker sheet", "Follow-up date = sent + 5 days"],
+    "passes": true
+  },
+  {
+    "id": "F012",
+    "category": "outreach",
+    "description": "Reply harvesting detects responses and updates tracker",
+    "steps": ["Run harvest-replies.sh", "Verify latest-harvest.json updated", "Check reply rate calculation"],
+    "passes": true
+  },
+  {
+    "id": "F013",
+    "category": "content",
+    "description": "5 LinkedIn posts drafted and approved for Will's profile",
+    "steps": ["Draft 5 posts", "User approves", "Posts saved to Google Doc or Sheet"],
+    "passes": false
+  },
+  {
+    "id": "F014",
+    "category": "content",
+    "description": "Blog articles on website covering key SEO topics",
+    "steps": ["Check for blog/articles section on site", "Verify at least 3 articles exist"],
+    "passes": false
+  },
+  {
+    "id": "F015",
+    "category": "outreach",
+    "description": "50 qualified HNWI leads researched and saved",
+    "steps": ["Search Apollo + web", "Build lead profiles", "Save to sheet/CRM", "Verify 50+ leads"],
+    "passes": false
+  }
+]
